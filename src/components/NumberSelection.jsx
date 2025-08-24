@@ -1,12 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
-import { useState } from 'react';
 
-const NumberSelection = () => {
+import styled from 'styled-components'
+
+
+const NumberSelection = ({clickNum, setClickNum}) => {
+
+
 
     const ArrayNum = [1, 2, 3, 4, 5, 6];
 
-    const [clickNum, setClickNum] = useState(false);
+    
 
 
     return (

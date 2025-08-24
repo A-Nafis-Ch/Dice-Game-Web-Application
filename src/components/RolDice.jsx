@@ -1,26 +1,18 @@
 import React from 'react'
 
 import  styled from 'styled-components'
-import {useState} from 'react'
 
-const RolDice = () => {
 
-    const [changeDice, setchangeDice] = useState(1);
+const RolDice = ({changeDice, Roller}) => {
 
-    const random = (min,max) =>{
-        // console.log(Math.floor(Math.random()*(max - min) + min))
-        return Math.floor(Math.random()*(max - min) + min);
-    }
+    
 
-    const rollDice = () => {
-        const randomDice = random(1,7);
-        setchangeDice((prev)=>randomDice);
-    }
+
 
  
   return (
     <DiceDiv>
-      <img onClick={rollDice} src={`../public/dice/dice_${changeDice}.png`} alt={`../public/dice/dice_${changeDice}.png`} />
+      <img onClick={Roller} src={`../public/dice/dice_${changeDice}.png`} alt={`../public/dice/dice_${changeDice}.png`} />
 
       <p>Click on Dice to roll</p>
     </DiceDiv>

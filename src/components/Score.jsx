@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Score = () => {
+const Score = ({scoreCard}) => {
   return (
     <ScoreCard>
 
         <div className="score">
 
-            <h1>0</h1>
+            <h1>{scoreCard}</h1>
 
         </div>
         <p>Total Score</p>
