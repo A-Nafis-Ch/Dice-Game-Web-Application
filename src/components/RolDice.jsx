@@ -1,20 +1,29 @@
 import React from 'react'
 
-import  styled from 'styled-components'
+import styled from 'styled-components'
 
 
-const RolDice = ({changeDice, Roller}) => {
 
+const RolDice = ({ resetScore, changeDice, Roller }) => {
+
+
+
+
+  const resetHandler = () => {
     
+    resetScore();
+  }
 
 
 
- 
+
   return (
     <DiceDiv>
       <img onClick={Roller} src={`../public/dice/dice_${changeDice}.png`} alt={`../public/dice/dice_${changeDice}.png`} />
 
       <p>Click on Dice to roll</p>
+
+      
     </DiceDiv>
   )
 }
@@ -36,6 +45,9 @@ p{
 
 img{
     cursor:pointer;
+}
+
+
 }
 
 

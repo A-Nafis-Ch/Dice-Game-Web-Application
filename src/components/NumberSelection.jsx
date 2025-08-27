@@ -2,25 +2,40 @@
 import styled from 'styled-components'
 
 
-const NumberSelection = ({clickNum, setClickNum}) => {
+const NumberSelection = ({setError, error,clickNum, setClickNum}) => {
 
 
 
     const ArrayNum = [1, 2, 3, 4, 5, 6];
+
+    const clickHandler = (num) => {
+
+      setClickNum(num);
+      setError("");
+
+    }
 
     
 
 
     return (
 
-        <>
+      
 
+        <>
+        
+          
             <Container>
+
+              <h3>{error}</h3>
+
                 <div>
+
+                  
                     {ArrayNum.map((num, i) => (
                         <Box
                             clickNum={num === clickNum}
-                            onClick={() => setClickNum(num)}
+                            onClick={() => clickHandler(num)}
                             key={i}
                         >
                             <h2>{num}</h2>
@@ -64,17 +79,26 @@ const Container = styled.div`
   display: flex;
   flex-direction: column; /
   align-items: center;
-  gap: 10px;
+  // gap: 10px;
 
   div {
     display: flex; 
-    gap: 10px;
+    gap: 12px;
+    
   }
 
   p{
     font-size: 24px;
     font-weight: 600;
-    margin-left: 320px
+    margin-left: 340px;
+  }
+
+  h3{
+
+    font-size: 18px;
+    margin-left: 170px;
+    color: red;
+    font-family: poppins;
   }
 `
 
